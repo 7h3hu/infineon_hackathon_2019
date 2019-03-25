@@ -9,28 +9,12 @@ contract ERC721 {
   function transfer(address _to, uint256 _tokenId) external;
   function transferFrom(address _from, address _to, uint256 _tokenId) external;
 
-  // Events
   event Transfer(address from, address to, uint256 tokenId);
   event Approval(address owner, address approved, uint256 tokenId);
 }
 
 contract ZeroKnowledgeIdentityContract is ERC721 {
-  struct Proof {
-    uint256 value;
-    /*
-    string[] A;
-    string[] A_p;
-    string[][] B;
-    string[] B_p;
-    string[] C;
-    string[] C_p;
-    string[] H;
-    string[] K;
-    uint256[] input;
-    */
-  }
-
-  Proof[] public proofs;
+  string[] public proofs;
 
   mapping (uint256 => address) public tokenOwners;
   mapping (address => uint256) public tokenCount;
@@ -107,35 +91,9 @@ contract Ownable {
 contract ZeroKnowledgeIdentityIssueContract is ZeroKnowledgeIdentityContract, Ownable {
   function issueIdentityToken(
     address _to,
-    uint256 _value
-    /*
-    byte[2] calldata _A,
-    byte[2] calldata _A_p,
-    byte[2][2] calldata _B,
-    byte[2] calldata _B_p,
-    byte[2] calldata _C,
-    byte[2] calldata _C_p,
-    byte[2] calldata _H,
-    byte[2] calldata _K,
-    uint256[2] calldata _input
-    */
+    string _proof
   ) external onlyOwner {
     require(balanceOf(_to) == 0, "Identity has already been issued!");
-
-    Proof memory _proof = Proof({
-      value: _value
-      /*
-      A: _A,
-      A_p: _A_p,
-      B: _B,
-      B_p: _B_p,
-      C: _C,
-      C_p: _C_p,
-      H: _H,
-      K: _K,
-      input: _input
-      */
-    });
 
     uint256 tokenId = proofs.push(_proof) - 1;
 
