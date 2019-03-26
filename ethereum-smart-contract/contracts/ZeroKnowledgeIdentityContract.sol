@@ -89,6 +89,12 @@ contract Ownable {
 }
 
 contract ZeroKnowledgeIdentityIssueContract is ZeroKnowledgeIdentityContract, Ownable {
+  string public verificationKey;
+
+  constructor(string _verificationKey) public {
+    verificationKey = _verificationKey;
+  }
+
   function issueIdentityToken(
     address _to,
     string _proof

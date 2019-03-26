@@ -51,7 +51,7 @@ def readVerificationKey():
     verificationKeyIpfsId = contract.functions.verificationKey().call()
 
     response = requests.get("http://68.183.209.55:8080/ipfs/" + verificationKeyIpfsId)
-    verificationKey = response.content.decode('utf8').replace("'", '"')
+    verificationKey = json.loads(response.content.decode('utf8').replace("'", '"'))
 
     return verificationKey
 
