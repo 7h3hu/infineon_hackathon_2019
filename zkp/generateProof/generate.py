@@ -21,7 +21,7 @@ def get_public_key(pk_id):
     return codecs.decode(public_key, 'hex')
 
 
-hashOfPublicKeys = public_to_hash([2, 3, 4])
+hashOfPublicKeys = public_to_hash([3, 4, 5])
 print(hashOfPublicKeys)
 
 f = open("input.json", "w")

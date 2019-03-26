@@ -1,4 +1,3 @@
-from subprocess import call
 import codecs
 import subprocess
 from Crypto.Hash import keccak
@@ -21,11 +20,12 @@ def get_public_key(pk_id):
     return codecs.decode(public_key, 'hex')
 
 
-hashOfPublicKeys = public_to_hash([2, 3, 4])
+hashOfPublicKeys = public_to_hash([3, 4, 5])
 print(hashOfPublicKeys)
 
 f = open("public.json", "w")
 f.write('["1", ' + '"0x' + str(hashOfPublicKeys) + '"]\n')
 f.close()
 
-call('snarkjs verify', shell=True)
+result = subprocess.call('snarkjs verify', shell=True)
+exit(result)
