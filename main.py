@@ -9,7 +9,11 @@ contract_abi = "[{\"constant\":false,\"inputs\":[{\"name\":\"_to\",\"type\":\"ad
 w3 = Web3(Web3.HTTPProvider("http://127.0.0.1:7545"))
 contract = w3.eth.contract(address=contract_address, abi=contract_abi)
 
-
+"""
+Upload a proof file in json format to IPFS and issue a new identitiy token which includes the IPFS hash
+to the specified wallet which can be used to fetch the proof from the IPFS network.
+@:returns None 
+"""
 def uploadProof(filename, wallet_address):
     content = json.loads(open(filename, "r").read())
 
@@ -20,11 +24,14 @@ def uploadProof(filename, wallet_address):
     w3.eth.waitForTransactionReceipt(tx_hash)
 
 
+"""
+Get the proof from the IPFS network for a specific wallet address in json format.
+@:returns Proof in JSON format or None
+"""
 def readProof(wallet_address):
     try:
         contract.functions.balanceOf(wallet_address).call()
     except:
-        print("ERROR: No identity token found!")
         return None
 
     proofId = contract.functions.tokensOfOwner(wallet_address).call()[0]
@@ -36,6 +43,10 @@ def readProof(wallet_address):
     return proof
 
 
+"""
+Get the public verification key from the IPFS network.
+@:returns Verification key in JSON format
+"""
 def readVerificationKey():
     verificationKeyIpfsId = contract.functions.verificationKey().call()
 
