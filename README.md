@@ -34,6 +34,12 @@ A simple algorithmic circuit is used to create zero knowledge proofs using `snar
 
 We created a Python frontend application using Flask. The script polls the NFC reader to detect new card wallets. As soon as a wallet is detected, we read the wallet address and check the Ethereum blockchain for an identitiy issued to this wallet. If an `Identity Token` is found, the zero knowledge proof is read from IPFS and verified. Upon success/failure the frontend shows a corresponding result.
 
+## Behind the Scenes
+
+Fancy math 🤓 | How it works
+------------ | -------------
+![IMG_20190326_085532](https://user-images.githubusercontent.com/6087393/55083568-0b8a9180-50a4-11e9-8cdd-16e4fe6a6535.jpg) | ![IMG_20190326_085535](https://user-images.githubusercontent.com/6087393/55083560-075e7400-50a4-11e9-9c50-b47d440c48d4.jpg)
+
 ## Licence
 
 This project is licensed under the MIT license. For more information see LICENSE.md.
