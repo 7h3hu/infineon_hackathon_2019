@@ -1,6 +1,6 @@
 # BeerDentity 🍺
 
-A project created at the Infineon hackathon 2019.
+A spirituous blockchain project using ZKPs created at the Infineon hackathon 2019.
 
 ## Usecase
 
@@ -12,11 +12,11 @@ The Infineon hardware wallet smart card is used to store identity tokens using z
 
 The `Blockchain Security 2Go Starter Kit` was provided by Infineon (https://www.infineon.com/blockchain) including libraries to access the wallet functionality (https://github.com/Infineon/blockchain).
 
-The smart cards are used to store `Identity Tokens` on the Ethereum blockchain which essentially contain a reference to the (zero knowledge) proof stored on the IPFS network.
+The smart cards are used to store `Identity Tokens` on the Ethereum blockchain which essentially contain a reference to the (zero knowledge) proof stored on the `IPFS` network.
 
 ### Ethereum Smart Contract
 
-An Ethereum smart contract, written in Solidity using the Truffle framework, is used to issue so-called non-fungible `Identity Tokens` (ERC-721). Those tokens are not transferable and each wallet can only contain one of them (as it represents an identity).
+An Ethereum smart contract, written in `Solidity` using the `Truffle` framework, is used to issue so-called non-fungible `Identity Tokens` (ERC-721). Those tokens are not transferable and each wallet can only contain one of them (as it represents an identity).
 
 ### Zero Knowledge Proof
 
