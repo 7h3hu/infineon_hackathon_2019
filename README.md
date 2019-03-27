@@ -6,6 +6,14 @@ A spirituous blockchain project using ZKPs created at the Infineon hackathon 201
 
 The Infineon hardware wallet smart card is used to store identity tokens using zero knowledge proofs in order to perform age verification without revealing any personal data.
 
+![](https://user-images.githubusercontent.com/6087393/55082333-c8c7ba00-50a1-11e9-9308-457940e13a37.png)
+
+An user needs to go to a local authority with his hardware wallet smart card. The authority created a proof that the person is older than 18 years and issues an `Identity Token` to the users wallet.
+
+![](https://user-images.githubusercontent.com/6087393/55082340-cb2a1400-50a1-11e9-8194-3cf828573357.png)
+
+The user can then use the hardware wallet smart card at various locations to proof he is old enough to use certain services without revealing his real age or birthday to the 3rd party.
+
 ## Implementation
 
 ### Hardware Wallet Smart Card with NFC Interface
