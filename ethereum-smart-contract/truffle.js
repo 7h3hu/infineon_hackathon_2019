@@ -4,21 +4,12 @@ module.exports = {
   networks: {
     development: {
       provider: function() {
-        const privateKeys = require("./secrets.js").privateKeysPrivateTestnet;
+        const privateKeys = ["273523be9cb38e667fd9243caa7d52a8e0f2ebf98882a9c8a1992aa51775e652"];
         return new HDWalletProvider(privateKeys, "http://127.0.0.1:7545")
       },
       network_id: "*",
       gas: 5000000,
       gasPrice: 10000000000
-    },
-    ropsten: {
-      provider: function() {
-        const privateKeys = require("./secrets.js").privateKeysRopstenTestnet;
-        return new HDWalletProvider(privateKeys, "https://ropsten.infura.io/v3/" + infuraApiKey)
-      },
-      network_id: "3",
-      gas: 5000000,
-      gasPrice: 50000000000
     }
   },
   compilers: {
