@@ -36,7 +36,7 @@ We created a Python frontend application using Flask. The script polls the NFC r
 
 ## Behind the Scenes
 
-Fancy math 🤓 | How it works
+Fancy math 🤓 | How it somewhat works
 ------------ | -------------
 ![IMG_20190326_085532](https://user-images.githubusercontent.com/6087393/55083568-0b8a9180-50a4-11e9-8cdd-16e4fe6a6535.jpg) | ![IMG_20190326_085535](https://user-images.githubusercontent.com/6087393/55083560-075e7400-50a4-11e9-9c50-b47d440c48d4.jpg)
 
