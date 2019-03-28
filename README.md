@@ -30,7 +30,7 @@ An Ethereum smart contract, written in `Solidity` using the `Truffle` framework,
 
 A simple algorithmic circuit is used to create zero knowledge proofs using `snarkjs` (https://github.com/iden3/snarkjs). The resulting `proof.json` is uploaded to IPFS and a reference to it is stored on the Ethereum blockchain using an `Identity Tokens`.
 
-### Frontend Application
+### (Frontend) Application
 
 We created a Python frontend application using Flask. The script polls the NFC reader to detect new card wallets. As soon as a wallet is detected, we read the wallet address and check the Ethereum blockchain for an identitiy issued to this wallet. If an `Identity Token` is found, the zero knowledge proof is read from IPFS and verified. Upon success/failure the frontend shows a corresponding result.
 
